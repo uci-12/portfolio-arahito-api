@@ -9,8 +9,9 @@ const portfolioSchema = new Schema({
   location: { type: String, required: true },
   jobTitle: { type: String, required: true },
   description: { type: String, required: true },
+  userId: { type: String, required: true },
   startDate: { type: Date, required: true },
-  endDate: { type: Date },
+  endDate: { type: Date, default: null },
   createdAt: { type: Date, default: Date.now }
 });
 

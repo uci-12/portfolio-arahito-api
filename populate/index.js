@@ -1,10 +1,10 @@
 
 
 const mongoose = require("mongoose");
-const { DB_URI } = require("../config/dev");
+const config = require("../config");
 const fakeDB = require("./FakeDB");
 
-mongoose.connect(DB_URI)
+mongoose.connect(config.DB_URI)
   .then(async () => {
     console.log("> Starting populating DB...");
     await fakeDB.populate();

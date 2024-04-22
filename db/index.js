@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
-const { DB_URI } = require("../config/dev");
+const config = require("../config");
 
 require("./models/portfolio");
+require("./models/blog");
 
 exports.connect = () => {
-  return mongoose.connect(DB_URI).then(() => console.log("Connected to MongoDB!"))
+  return mongoose.connect(config.DB_URI).then(() => console.log("Connected to MongoDB!"))
   .catch(err => console.error(err))
 }
 
